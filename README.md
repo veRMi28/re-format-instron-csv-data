@@ -25,3 +25,43 @@ or
 `python convert_decimals.py Specimen_RawData_1.csv`     
 
 Converted files receive a filename following the pattern `<old-filename>_decsep.csv`
+
+### Logging:
+To monitor which data-files are created (and where) a logging file is created in the same directory as the script. 
+New logs are appended to a logging file, if the logging file already exists.
+
+## Example data:
+
+original:     
+```
+Specimen properties : Anvil height,"3,11",mm
+Specimen properties : Geometry,Circular
+Specimen properties : Area,"100,0",mm^2
+Specimen properties : Final anvil height,"2,22",mm
+Specimen properties : Final area,"100,1",mm^2
+Specimen properties : Specimen label,""
+Specimen properties : Diameter,"14,0",mm
+Specimen properties : Final diameter,"14,0",mm
+
+Time,Extension,Load,Compressive strain (Extension),Compressive stress,Cycle count
+(s),(mm),(N),(mm/mm),(MPa),
+"0,0","0,0","0,0","0,0","0,0","0,0"
+"0,1","-0,02","-0,02","-0,01","0,0","0,0"
+```
+
+re-formatted:     
+```
+Specimen properties : Anvil height;3,11;mm
+Specimen properties : Geometry;Circular
+Specimen properties : Area;100.0;mm^2
+Specimen properties : Final anvil height;2.22;mm
+Specimen properties : Final area;100.1;mm^2
+Specimen properties : Specimen label;
+Specimen properties : Diameter;14.0;mm
+Specimen properties : Final diameter;14.0;mm
+
+Time;Extension;Load;Compressive strain (Extension);Compressive stress;Cycle count
+(s);(mm);(N);(mm/mm);(MPa);
+0.0;0.0;0.0;0.0;0.0;0.0
+0.1;-0.02;-0.02;-0.01;0.0;0.0
+```
